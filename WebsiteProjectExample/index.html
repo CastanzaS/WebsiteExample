@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: burlywood;
+            }
+        </style>
+    <meta charset="UTF-8">
+    <title>Sample Website</title>
+    <link rel="stylesheet" href="style.css">
+   
+    </head>
+    
+    <body>
+        <style>
+            body{background-image: fil;}
+        </style>
+ 
+        <!--Using a class to reference multiple items on webpage to add CSS code to all of them at the same time-->
+        <div id ="headings">
+        <h1>This is the largest heading </h1>
+        <h2>This is the second largest heading</h2>
+        <h3>This is the third largest heading</h3>
+        </div>
+
+<!--Using a class to reference multiple items on webpage on the CSS document-->
+    <div class = 'button_image'>
+    <p>This is a paragraph, smallest sized text on a webpage, click the cookie to purchase a delicious chocolate chip cookie we have 20 in stock</p>
+    <img id = 'cookieimg' src="cookies.jpg" alt="Cookies">
+    <button type="button" onclick="add_to_cart();">Buy a cookie?</button> <!--This is the button that calls the javascript function below-->
+    <p id="cart">Your cart is empty</p> <!--This is the paragraph text that will update on every click-->
+    <a href = "orderPlaced.html" ><button onclick = "checkOut()">Place Order </button></a>
+    </div>
+
+    <!--This is the Javascript function to add an item to the cart called when the button is clicked-->
+    <script>
+        var cart_items = 1 //variable that counts how many items are in the cart
+
+        function add_to_cart(){
+    
+
+        if (cart_items<20){
+         document.getElementById("cart").innerHTML = "You have "+ cart_items +" cookies in your cart";//update the cart paragraph when the button is clicked
+        cart_items++
+            }
+
+        else{
+        document.getElementById("cart").innerHTML = cart_items +"  is the maximum number of cookies you can buy"; //Let the user know they maxed out on cookies
+
+             }
+        
+        }
+            
+        
+    </script>
+
+    
+    
+
+    </body>
+</html>
